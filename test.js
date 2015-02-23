@@ -1,7 +1,7 @@
 var test = require('tape')
 var ownedModules = require('./index')
 
-test('callback method', function(t) {
+test('get the modules', function(t) {
 	ownedModules('npmupdater', function(err, modules) {
 		t.notOk(err, 'should not contain error')
 		t.ok(modules, 'modules should exist')

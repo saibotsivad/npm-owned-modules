@@ -1,6 +1,6 @@
 {
   "name": "npm-owned-modules",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Get the list of npm modules owned by a user.",
   "main": "index.js",
   "scripts": {

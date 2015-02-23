@@ -17,23 +17,14 @@ Install it the normal way:
 
 	npm install npm-owned-modules
 
-You can use it with a callback:
+You just call it with a string that's the user name:
 
 	var ownedModules = require('npm-owned-modules')
 	ownedModules('saibotsivad', function(err, modules) {
 		// modules array
 	})
 
-Or you can use it as a promise:
-
-	var ownedModules = require('npm-owned-modules')
-	ownedModules('saibotsivad').then(function(modules) {
-		// modules array
-	}, function(err) {
-		// handle errors
-	})
-
-The modules list is just a simple array of module names, e.g.:
+The modules list is just a simple array of module name strings, e.g.:
 
 ```javascript
 var modules = [

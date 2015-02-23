@@ -20,8 +20,7 @@
     "url": "https://github.com/tobiaslabs/npm-owned-modules/issues"
   },
   "dependencies": {
-    "cheerio": "~0.18.0",
-    "promise": "~6.1.0"
+    "cheerio": "~0.18.0"
   },
   "devDependencies": {
     "tape": "~3.5.0"

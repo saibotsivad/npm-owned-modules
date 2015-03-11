@@ -20,7 +20,9 @@
     "url": "https://github.com/tobiaslabs/npm-owned-modules/issues"
   },
   "dependencies": {
-    "cheerio": "~0.18.0"
+    "JSONStream": "^0.10.0",
+    "concat-stream": "^1.4.7",
+    "request": "^2.53.0"
   },
   "devDependencies": {
     "tape": "~3.5.0"

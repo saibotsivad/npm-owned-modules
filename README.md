@@ -7,10 +7,6 @@ Get the list of npm modules owned by a user.
 Although you can use [npm programmatically](https://www.npmjs.com/package/npm), you can't
 actually list the modules that a user owns.
 
-If there's a way to do it via an api, I couldn't find it. If you know of a way, please
-make a pull request with the changes. That'd be so awesome. Until then, this is really
-just a web page scraper.
-
 # using
 
 Install it the normal way:
@@ -19,10 +15,12 @@ Install it the normal way:
 
 You just call it with a string that's the user name:
 
-	var ownedModules = require('npm-owned-modules')
-	ownedModules('saibotsivad', function(err, modules) {
-		// modules array
-	})
+```javascript
+var ownedModules = require('npm-owned-modules')
+ownedModules('saibotsivad', function(err, modules) {
+	// modules array
+})
+```
 
 The modules list is just a simple array of module name strings, e.g.:
 

@@ -7,9 +7,9 @@ test('get the modules', function(t) {
 		t.ok(modules, 'modules should exist')
 		t.ok(Array.isArray(modules), 'modules should be an array')
 		t.ok(modules.length > 0, 'modules should contain at least one')
-		var allStrings = modules.filter(function(module) {
+		var allStrings = modules.every(function(module) {
 			return typeof module === 'string'
-		}).length === modules.length
+		})
 		t.ok(allStrings, 'all array objects should be strings')
 		t.end()
 	})

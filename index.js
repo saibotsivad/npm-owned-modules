@@ -1,24 +1,21 @@
-var https = require('https')
-var cheerio = require('cheerio')
+var request = require('request')
+var jsonStream = require('JSONStream')
+var concat = require('concat-stream')
+var qs = require('querystring')
+
+function url(username) {
+	return 'http://registry.npmjs.org/-/_view/browseAuthors?' + qs.stringify({
+		group_level: 2,
+		start_key: '["' + username + '"]',
+		end_key: '["' + username + '",{}]'
+	})
+}
+var parse = jsonStream.parse(['rows', true, 'key'], function map(row) {
+	return [ row[1] ]
+})
 
 module.exports = function getNpmModules(username, cb) {
-	https.get('https://www.npmjs.com/~' + username, function(res) {
-		var completeData = ''
-		res.setEncoding('utf8')
-		res.on('data', function(data) {
-			completeData = completeData + data
-		})
-		res.on('end', function(data) {
-			completeData = completeData + data
-			var modules = []
-			var $ = cheerio.load(completeData)
-			$('#profile #packages').parent().next().children().each(function(index, element) {
-				$(element).children('a').each(function(i, e) {
-					var href = $(this).attr('href')
-					modules.push(href.replace('/package/', ''))
-				})
-			})
-			cb(false, modules)
-		})
-	})
+	request(url(username))
+		.pipe(parse)
+		.pipe(concat(cb.bind(null, null)))
 }

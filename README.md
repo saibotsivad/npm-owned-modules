@@ -1,13 +1,37 @@
 # npm-owned-modules [![Build Status](https://travis-ci.org/tobiaslabs/npm-owned-modules.svg?branch=master)](https://travis-ci.org/sdmp/npm-owned-modules)
 
-[![NPM](https://nodei.co/npm/npm-owned-modules.png)](https://nodei.co/npm/npm-owned-modules/)
-
 Get the list of npm modules owned by a user.
 
-Although you can use [npm programmatically](https://www.npmjs.com/package/npm), you can't
-actually list the modules that a user owns.
+## about it
 
-# using
+Since npm doesn't publish any docs for interacting with their API, the
+best you can do is read through their [website repo](https://github.com/npm/newww)
+and try to reverse engineer it.
+
+What I found was that it's just a simple HTTP call which returns a JSON
+array of modules.
+
+So keep using this module if you want, or just hit up this URL:
+
+	https://registry.npmjs.org/-/user/USERNAME/package
+
+Where `USERNAME` is obviously the users name, like `saibotsivad`.
+
+Additional `GET` query params are possible:
+
+* `per_page`: Number of results to include on paginated query.
+* `page`: Zero-indexed page for paginated results.
+* `format`: Changes the amount of data returned. As best as I can
+	tell the only options are not using it or the string `mini`.
+
+For example, to get `5` modules from the user `saibotsivad` go here
+(even in your browser):
+
+[https://registry.npmjs.org/-/user/saibotsivad/package?per_page=5&page=0](https://registry.npmjs.org/-/user/saibotsivad/package?per_page=5&page=0)
+
+That's it.
+
+# using this module
 
 Install it the normal way:
 

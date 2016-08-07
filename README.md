@@ -39,7 +39,7 @@ Install it the normal way:
 
 You just call it with a string that's the user name:
 
-```javascript
+```js
 var ownedModules = require('npm-owned-modules')
 ownedModules('saibotsivad', function(err, modules) {
 	// modules array
@@ -48,7 +48,7 @@ ownedModules('saibotsivad', function(err, modules) {
 
 The modules list is just a simple array of module name strings, e.g.:
 
-```javascript
+```js
 var modules = [
 	'npm-owned-modules',
 	'ftp-core'
@@ -58,6 +58,4 @@ var modules = [
 
 # license
 
-Everything in this repository is released under the [VOL](http://veryopenlicense.com).
-
-<3
+[VOL](http://veryopenlicense.com)

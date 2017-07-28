@@ -1,5 +1,7 @@
 # npm-owned-modules [![Build Status](https://travis-ci.org/tobiaslabs/npm-owned-modules.svg?branch=master)](https://travis-ci.org/sdmp/npm-owned-modules)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/saibotsivad/npm-owned-modules.svg)](https://greenkeeper.io/)
+
 Get the list of npm modules owned by a user.
 
 ## about it

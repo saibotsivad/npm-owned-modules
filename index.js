@@ -8,9 +8,7 @@ module.exports = function getNpmModules(username, cb) {
 			cb(error)
 		} else {
 			try {
-				var modules = JSON.parse(body).items.map(function(module) {
-					return module.name
-				})
+				var modules = Object.keys(JSON.parse(body))
 				cb(false, modules)
 			} catch (e) {
 				cb(e)
